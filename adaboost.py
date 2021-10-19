@@ -2,6 +2,8 @@ import numpy as np
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 
+## Explanation for this algorithm can be found here (https://medium.com/@derilraju/implementing-adaboost-classifier-from-scratch-in-python-84e1a8bd2999)
+
 class DecisionStump:
     def __init__(self):
         self.polarity = 1
