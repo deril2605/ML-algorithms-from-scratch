@@ -70,16 +70,20 @@ class myAdaBoost:
 def accuracy(y_true, y_pred):
     accuracy = np.sum(y_true == y_pred) / len(y_true)
     return accuracy
-  
+ 
+## Loading dataset
 data = datasets.load_breast_cancer()
 X = data.data
 y = data.target
 y[y==0]=-1
+## Splitting data randomly as train (80% of the data) and test (20% of the data)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1234)
 
 clf = myAdaBoost()
+## Fitting the model on train data
 clf.fit(X_train, y_train)
 
+## Predict the target's for 20% test data
 y_pred = clf.predict(X_test)
 acc = accuracy(y_test, y_pred)
 acc
