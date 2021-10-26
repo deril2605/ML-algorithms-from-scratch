@@ -68,7 +68,8 @@ class myAdaBoost:
         y_pred = np.sum(clf_preds,axis=0)
         y_pred = np.sign(y_pred)
         return y_pred
-      
+
+## Method to calculate accuracy
 def accuracy(y_true, y_pred):
     accuracy = np.sum(y_true == y_pred) / len(y_true)
     return accuracy
