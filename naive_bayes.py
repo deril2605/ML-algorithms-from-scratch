@@ -8,6 +8,7 @@ def accuracy(y_true, y_pred):
     return accuracy
   
 X, y = datasets.make_classification(n_samples=1000, n_features=10, n_classes=2, random_state=123)
+## Splitting data randomly as train (80% of the data) and test (20% of the data)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=123)
 
 class myNB():
@@ -48,6 +49,8 @@ class myNB():
         return num/den
       
 mynb = myNB()
+## Fitting the model on train data
 mynb.fit(X_train,y_train)
+## Predict the target's for 20% test data
 preds = mynb.predict(X_test)
 accuracy(preds,y_test)
