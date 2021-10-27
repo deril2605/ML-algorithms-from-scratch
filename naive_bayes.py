@@ -47,7 +47,8 @@ class myNB():
         num = np.exp(-(x-mean)**2/(2**var))
         den = np.sqrt(2*np.pi*var)
         return num/den
-      
+
+# instantiate classifier    
 mynb = myNB()
 ## Fitting the model on train data
 mynb.fit(X_train,y_train)
