@@ -29,7 +29,7 @@ class MYSVM:
                 # do a forward pass
                 y_pred = y_true[idx]*(np.dot(sample,self.w)-self.b)
                 
-                # update with the graient
+                # update with the gradient
                 if y_pred>=1:
                     self.w -= self.lr * (2 * self.lambda_p * self.w)
                 else:
